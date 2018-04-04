@@ -1,15 +1,24 @@
 <template>
   <div class="body">
     Hey this is the body
+    <ul>
+      <li v-for="name in sillyNames">
+        <span>{{name.name}}</span>
+        <span>{{name.age}}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'body',
-  data () {
-    return {
-      text: 'Hey this is the body'
+  computed: {
+    names () {
+      return this.$store.state
+    },
+    sillyNames () {
+      return this.$store.getters.sillyNames
     }
   }
 }
