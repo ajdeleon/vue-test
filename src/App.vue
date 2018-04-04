@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>{{ header }}</span>
+      <span>{{ storeData }}</span>
     </header>
     <main>
       <img src="./assets/logo.png" alt="Vue.js PWA">
@@ -19,7 +19,7 @@ export default {
   name: 'app',
   computed: {
     storeData () {
-      return this.$store.state
+      return this.$store.state[0].name
     }
   }
 }
