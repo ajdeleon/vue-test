@@ -19,5 +19,17 @@ export const store = new Vuex.Store({
         }
       })
     }
+  },
+  mutations: {
+    makeMoreSilly: state => {
+      state.forEach(name => {
+        name.name += ' even sillier'
+      })
+    }
+  },
+  actions: {
+    makeMoreSilly: context => {
+      context.commit('makeMoreSilly')
+    }
   }
 })
