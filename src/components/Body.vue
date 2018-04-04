@@ -7,6 +7,7 @@
         <span>{{name.age}}</span>
       </li>
     </ul>
+    <button v-on:click="makeMoreSilly">Make em sillier</button>
   </div>
 </template>
 
@@ -19,6 +20,11 @@ export default {
     },
     sillyNames () {
       return this.$store.getters.sillyNames
+    }
+  },
+  methods: {
+    makeMoreSilly: function () {
+      this.$store.dispatch('makeMoreSilly')
     }
   }
 }
