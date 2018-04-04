@@ -5,17 +5,21 @@
     </header>
     <main>
       <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
+      <Body></Body>
     </main>
   </div>
 </template>
 
 <script>
+import Body from './components/Body.vue'
 export default {
+  components: {
+    'Body': Body
+  },
   name: 'app',
-  data () {
-    return {
-      header: 'Vue.js PWA'
+  computed: {
+    storeData () {
+      return this.$store.state
     }
   }
 }
